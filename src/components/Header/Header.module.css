@@ -1,0 +1,4 @@
+.header {
+  padding: var(--mantine-spacing-md);
+  box-shadow: var(--mantine-shadow-sm);
+}
