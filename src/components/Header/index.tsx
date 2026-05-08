@@ -4,7 +4,7 @@ const Header = () => (
   <header className={styles.header}>
     <a href="/">
       <img
-        src="/logo-text-only.webp"
+        src="/logo/logo-text-only.webp"
         alt="Logo for Where's Wally"
         width="144px"
       />

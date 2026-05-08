@@ -2,18 +2,16 @@ import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import Header from "./components/Header";
 import Gameboard from "./components/Gameboard";
-import gameImg from "./assets/wheres-wally-beach.webp";
+import { BEACH_MAP } from "./mockData";
 
-const App = () => {
-  return (
-    <MantineProvider>
-      <Header />
+const App = () => (
+  <MantineProvider>
+    <Header />
 
-      <main>
-        <Gameboard imgSrc={gameImg} />
-      </main>
-    </MantineProvider>
-  );
-};
+    <main>
+      <Gameboard map={BEACH_MAP} />
+    </main>
+  </MantineProvider>
+);
 
 export default App;
