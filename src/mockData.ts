@@ -7,8 +7,10 @@ export const CHARACTERS = {
   odlaw: `${HEADSHOT_PATH_PREFIX}/odlaw.webp`,
 } as const;
 
-export type CharacterCoordinates = {
-  characterName: keyof typeof CHARACTERS;
+export type CharacterName = keyof typeof CHARACTERS;
+
+type CharacterCoordinates = {
+  characterName: CharacterName;
   coordinates: string; //? no idea what type this will be yet
 };
 
