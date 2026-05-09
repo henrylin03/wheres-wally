@@ -1,18 +1,26 @@
 import { Image } from "@mantine/core";
-import { useState } from "react";
+import React, { useState, type RefObject } from "react";
 import { type CharacterName, type Map } from "../../mockData";
 import { Dropdown, type Location } from "../Dropdown";
 import styles from "./Gameboard.module.css";
 interface Props {
   mapImg: Map["imgSrc"];
   characterNames: CharacterName[];
+  menuIsVisible: boolean;
+  setMenuIsVisible: (menuIsVisible: boolean) => void;
+  ref: RefObject<HTMLImageElement | null>;
 }
 
-const Gameboard = ({ mapImg, characterNames }: Props) => {
-  const [menuIsVisible, setMenuIsVisible] = useState(false);
+const Gameboard = ({
+  mapImg,
+  characterNames,
+  menuIsVisible,
+  setMenuIsVisible,
+  ref,
+}: Props) => {
   const [selectedPosition, setSelectedPosition] = useState<Location>([0, 0]);
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
     setMenuIsVisible(true);
     setSelectedPosition([e.pageX, e.pageY]);
     console.log("selectedPosition:", selectedPosition);
@@ -29,6 +37,7 @@ const Gameboard = ({ mapImg, characterNames }: Props) => {
         my="lg"
         className={styles.img}
         onClick={handleClick}
+        ref={ref}
       />
       {menuIsVisible && (
         <Dropdown
