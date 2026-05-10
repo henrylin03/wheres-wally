@@ -6,3 +6,10 @@
   box-shadow: var(--mantine-shadow-xl);
   border: 1px solid hsla(0, 0%, 0%, 25%);
 }
+
+.characterBtn {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+}

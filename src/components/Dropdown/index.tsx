@@ -1,5 +1,5 @@
-import { Stack, UnstyledButton } from "@mantine/core";
-import type { CharacterName, Location } from "../../mockData";
+import { Avatar, Stack, UnstyledButton } from "@mantine/core";
+import { CHARACTERS, type CharacterName, type Location } from "../../mockData";
 import { capitaliseFirstLetter } from "../../utils";
 import styles from "./Dropdown.module.css";
 
@@ -16,8 +16,9 @@ export const Dropdown = ({ clickedPosition, characterNames }: Props) => {
     <div style={positionStyling} className={styles.dropdown}>
       <Stack gap={0}>
         {characterNames.map((character) => (
-          <UnstyledButton ta="left" p="sm">
-            {capitaliseFirstLetter(character)}
+          <UnstyledButton p="sm" className={styles.characterBtn}>
+            <Avatar src={CHARACTERS[character]} radius="xl" />
+            <span>{capitaliseFirstLetter(character)}</span>
           </UnstyledButton>
         ))}
       </Stack>
