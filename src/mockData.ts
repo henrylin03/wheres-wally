@@ -8,10 +8,11 @@ export const CHARACTERS = {
 } as const;
 
 export type CharacterName = keyof typeof CHARACTERS;
+export type Location = [number, number];
 
 type CharacterCoordinates = {
   characterName: CharacterName;
-  coordinates: string; //? no idea what type this will be yet
+  coordinates: Location;
 };
 
 export type Map = {
@@ -22,8 +23,8 @@ export type Map = {
 export const BEACH_MAP: Map = {
   imgSrc: "/images/maps/wheres-wally-beach.webp",
   locations: [
-    { characterName: "wally", coordinates: "X1, Y1" },
-    { characterName: "wizard", coordinates: "X2, Y2" },
-    { characterName: "odlaw", coordinates: "X3, Y3" },
+    { characterName: "wally", coordinates: [1, 1] },
+    { characterName: "wizard", coordinates: [2, 2] },
+    { characterName: "odlaw", coordinates: [3, 3] },
   ],
 };

@@ -1,7 +1,7 @@
 import { Image } from "@mantine/core";
 import React, { useState, type RefObject } from "react";
-import { type CharacterName, type Map } from "../../mockData";
-import { Dropdown, type Location } from "../Dropdown";
+import type { CharacterName, Location, Map } from "../../mockData";
+import { Dropdown } from "../Dropdown";
 import styles from "./Gameboard.module.css";
 interface Props {
   mapImg: Map["imgSrc"];

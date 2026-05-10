@@ -1,9 +1,8 @@
 import { Stack, UnstyledButton } from "@mantine/core";
-import type { CharacterName } from "../../mockData";
+import type { CharacterName, Location } from "../../mockData";
 import { capitaliseFirstLetter } from "../../utils";
 import styles from "./Dropdown.module.css";
 
-export type Location = [number, number];
 interface Props {
   clickedPosition: Location;
   characterNames: CharacterName[];
