@@ -13,3 +13,9 @@
   align-items: center;
   gap: var(--mantine-spacing-xs);
 }
+
+.characterBtn:hover {
+  background-color: var(--mantine-color-gray-1);
+  text-decoration: underline;
+  transition: all ease-in-out 70ms;
+}
