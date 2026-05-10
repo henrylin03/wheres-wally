@@ -1,7 +1,7 @@
 .dropdown {
   position: absolute;
   background-color: white;
-  width: 10rem;
+  width: 9rem;
   border-radius: var(--mantine-radius-sm);
   box-shadow: var(--mantine-shadow-xl);
   border: 1px solid hsla(0, 0%, 0%, 25%);
