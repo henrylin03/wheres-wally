@@ -14,9 +14,11 @@ export const Dropdown = ({ clickedPosition, characterNames }: Props) => {
 
   return (
     <div style={positionStyling} className={styles.dropdown}>
-      <Stack gap="lg">
+      <Stack gap={0}>
         {characterNames.map((character) => (
-          <UnstyledButton>{capitaliseFirstLetter(character)}</UnstyledButton>
+          <UnstyledButton ta="left" p="sm">
+            {capitaliseFirstLetter(character)}
+          </UnstyledButton>
         ))}
       </Stack>
     </div>
