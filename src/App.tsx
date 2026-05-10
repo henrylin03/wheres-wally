@@ -6,6 +6,7 @@ import Gameboard from "./components/Gameboard";
 import Header from "./components/Header";
 import useOutsideClick from "./hooks/useOutsideClick";
 import { BEACH_MAP } from "./mockData";
+import "./styles/global.css";
 
 const App = () => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
