@@ -8,6 +8,7 @@ export const CHARACTERS = {
 } as const;
 
 export type CharacterName = keyof typeof CHARACTERS;
+export type CharacterAvatarImage = (typeof CHARACTERS)[CharacterName];
 export type Location = [number, number];
 
 type CharacterCoordinates = {

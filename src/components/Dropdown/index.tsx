@@ -1,14 +1,20 @@
-import { Avatar, Stack, Text, UnstyledButton } from "@mantine/core";
+import { Stack, Text, UnstyledButton } from "@mantine/core";
 import { CHARACTERS, type CharacterName, type Location } from "../../mockData";
 import { capitaliseFirstLetter } from "../../utils";
+import CharacterAvatar from "../CharacterAvatar";
 import styles from "./Dropdown.module.css";
 
 interface Props {
   clickedPosition: Location;
   characterNames: CharacterName[];
+  charactersFound: CharacterName[];
 }
 
-export const Dropdown = ({ clickedPosition, characterNames }: Props) => {
+export const Dropdown = ({
+  clickedPosition,
+  characterNames,
+  charactersFound,
+}: Props) => {
   const [x, y] = clickedPosition;
   const positionStyling = { left: x, top: y };
 
@@ -18,12 +24,25 @@ export const Dropdown = ({ clickedPosition, characterNames }: Props) => {
         Who did you find here?
       </Text>
       <Stack gap={0}>
-        {characterNames.map((character) => (
-          <UnstyledButton p="sm" className={styles.characterBtn}>
-            <Avatar src={CHARACTERS[character]} radius="xl" />
-            <span>{capitaliseFirstLetter(character)}</span>
-          </UnstyledButton>
-        ))}
+        {characterNames.map((character) => {
+          const characterIsFound = charactersFound.includes(character);
+
+          return (
+            <UnstyledButton
+              p="sm"
+              className={styles.characterBtn}
+              disabled={characterIsFound}
+            >
+              <CharacterAvatar
+                name={character}
+                img={CHARACTERS[character]}
+                size="md"
+                isFound={characterIsFound}
+              />
+              <span>{capitaliseFirstLetter(character)}</span>
+            </UnstyledButton>
+          );
+        })}
       </Stack>
     </div>
   );

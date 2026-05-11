@@ -6,6 +6,8 @@ import styles from "./Gameboard.module.css";
 interface Props {
   mapImg: Map["imgSrc"];
   characterNames: CharacterName[];
+  charactersFound: CharacterName[];
+  setCharactersFound: (charactersFound: CharacterName[]) => void;
   menuIsVisible: boolean;
   setMenuIsVisible: (menuIsVisible: boolean) => void;
   ref: RefObject<HTMLImageElement | null>;
@@ -14,6 +16,9 @@ interface Props {
 const Gameboard = ({
   mapImg,
   characterNames,
+  charactersFound,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setCharactersFound,
   menuIsVisible,
   setMenuIsVisible,
   ref,
@@ -43,6 +48,7 @@ const Gameboard = ({
         <Dropdown
           clickedPosition={selectedPosition}
           characterNames={characterNames}
+          charactersFound={charactersFound}
         />
       )}
     </section>
