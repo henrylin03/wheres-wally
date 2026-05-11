@@ -1,12 +1,12 @@
 .section {
   display: grid;
   justify-items: center;
+  overflow: scroll;
 }
 
 .img {
   margin-top: var(--mantine-spacing-xl);
   cursor: crosshair;
-  height: 80dvh;
-  max-width: 100%;
-  object-fit: cover;
+  height: 75dvh;
+  width: auto;
 }
