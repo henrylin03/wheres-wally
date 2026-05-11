@@ -7,6 +7,7 @@ import styles from "./Dropdown.module.css";
 interface Props {
   clickedPosition: Location;
   characterNames: CharacterName[];
+  charactersFound: CharacterName[];
 }
 
 export const Dropdown = ({ clickedPosition, characterNames }: Props) => {
