@@ -1,12 +1,26 @@
-import { Avatar, Indicator, type MantineSize } from "@mantine/core";
+import { Avatar, Indicator } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import type { CharacterAvatarImage, CharacterName } from "../mockData";
 
+const SIZE_MAP = {
+  md: {
+    size: 16,
+    iconSize: 6,
+    iconStrokeWidth: 6,
+  },
+  xl: {
+    size: 24,
+    iconSize: 12,
+    iconStrokeWidth: 6,
+  },
+} as const;
+
+type SupportedSizes = keyof typeof SIZE_MAP;
 interface Props {
   name: CharacterName;
   img: CharacterAvatarImage;
   isFound?: boolean;
-  size?: MantineSize;
+  size?: SupportedSizes;
 }
 
 const CharacterAvatar = ({
@@ -31,8 +45,13 @@ const CharacterAvatar = ({
     <Indicator
       inline
       color="green"
-      size={24}
-      label={<IconCheck size={12} strokeWidth={6} />}
+      size={SIZE_MAP[size].size}
+      label={
+        <IconCheck
+          size={SIZE_MAP[size].iconSize}
+          strokeWidth={SIZE_MAP[size].iconStrokeWidth}
+        />
+      }
     >
       {avatar}
     </Indicator>
