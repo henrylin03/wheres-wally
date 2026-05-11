@@ -11,7 +11,7 @@ const Characters = ({ characterNames }: Props) => (
   <Group gap="4rem" mx="auto" mt="xl" justify="center">
     {characterNames.map((name) => (
       <Tooltip key={name} label={capitaliseFirstLetter(name)} withArrow>
-        <CharacterAvatar name={name} img={CHARACTERS[name]} size="xl" />
+        <CharacterAvatar name={name} img={CHARACTERS[name]} size="xl" isFound />
       </Tooltip>
     ))}
   </Group>
