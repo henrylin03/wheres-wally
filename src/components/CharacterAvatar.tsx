@@ -8,6 +8,11 @@ const SIZE_MAP = {
     iconSize: 6,
     iconStrokeWidth: 6,
   },
+  lg: {
+    size: 20,
+    iconSize: 10,
+    iconStrokeWidth: 6,
+  },
   xl: {
     size: 24,
     iconSize: 12,

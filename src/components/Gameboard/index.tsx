@@ -1,4 +1,3 @@
-import { Image } from "@mantine/core";
 import React, { useState, type RefObject } from "react";
 import type { CharacterName, Location, Map } from "../../mockData";
 import { Dropdown } from "../Dropdown";
@@ -32,17 +31,12 @@ const Gameboard = ({
   };
 
   return (
-    <section>
-      <Image
+    <section className={styles.section}>
+      <img
         src={mapImg}
-        mx="auto"
-        fit="contain"
-        w="auto"
-        h="80vh"
-        my="lg"
-        className={styles.img}
-        onClick={handleClick}
         ref={ref}
+        onClick={handleClick}
+        className={styles.img}
       />
       {menuIsVisible && (
         <Dropdown
