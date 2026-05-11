@@ -1,0 +1,29 @@
+.dropdown {
+  position: absolute;
+  background-color: white;
+  width: 10rem;
+  border-radius: var(--mantine-radius-sm);
+  box-shadow: var(--mantine-shadow-xl);
+  border: 1px solid hsla(0, 0%, 0%, 25%);
+}
+
+.characterBtn {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+
+  &:not(:disabled):hover {
+    background-color: var(--mantine-color-gray-1);
+    text-decoration: underline;
+    transition: all ease-in-out 70ms;
+  }
+}
+
+.characterBtn:disabled {
+  cursor: not-allowed;
+}
+
+.characterBtn:disabled > span {
+  opacity: 0.5;
+}
