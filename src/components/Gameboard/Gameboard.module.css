@@ -10,3 +10,9 @@
   height: 75dvh;
   width: auto;
 }
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .img {
+    margin-top: var(--mantine-spacing-lg);
+  }
+}
