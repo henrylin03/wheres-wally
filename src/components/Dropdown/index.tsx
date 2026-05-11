@@ -32,6 +32,7 @@ export const Dropdown = ({
               p="sm"
               className={styles.characterBtn}
               disabled={characterIsFound}
+              key={character}
             >
               <CharacterAvatar
                 name={character}
